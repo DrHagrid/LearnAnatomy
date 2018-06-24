@@ -1,0 +1,82 @@
+body {
+    background: url(bg.png);
+}
+
+.main-container {
+    width: 95%;
+    padding: 10% 0 0;
+    margin: auto;
+}
+
+.box {
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    background: white;
+    max-width: 75%;
+    margin: 0 auto 100px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16pt;
+}
+
+.alert-box {
+
+}
+
+.hint-box {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.hint-alert {
+    margin-bottom: 0;
+}
+
+form {
+    white-space:nowrap;
+}
+
+.form-inline .form-control {
+    width: 250px;
+}
+
+.ans-btn {
+    min-width: 100px;
+    margin-top: 10px;
+}
+
+.register {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+}
+
+.item {
+    height: 200px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    position: relative;
+    padding: 5px;
+    text-align:center;
+    margin-bottom: 25px;
+}
+
+.item a {
+    display: block; /* Ссылка как блочный элемент */
+    /*height: 100%; /* Высота на весь слой */
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.item:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="alert-box">
+        <div class="alert alert-danger" role="alert">
+            Упс! Произошла неизвестная ошибка. Пожалуйста обратитесь в тех.поддержку.
+        </div>
+    </div>
+    <div class="">
+        <form id="check-answer" class="form-inline" action="{% url 'check_answer' %}">{% csrf_token %}
+            <div class="form-group button-box">
+                <button class="btn btn-success ans-btn" id="submit_btn" data-action="next" data-reaction_id="1">
+                    Начать заново
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

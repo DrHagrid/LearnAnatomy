@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="alert-box">
+    </div>
+    <div class="">
+        {% for type in types %}
+            <div class="">
+                <form action="{{ type.variable }}">
+                    <button class="btn btn-success" type="submit">
+                        {{ type.name }}
+                    </button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

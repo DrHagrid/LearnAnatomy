@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="alert-box">
+        <div class="alert alert-warning" role="alert">
+            Выберите раздел для изучения
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for type in types %}
+                <div class="col-md-3">
+                    <div class="item" onclick="location.href='{{ type.variable }}/undefined'">
+                        {{ type.name }}
+                        <img src="none.png">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

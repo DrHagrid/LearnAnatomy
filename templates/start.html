@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="alert-box">
+            <div class="alert alert-warning" role="alert">
+                Добро пожаловать, {{ user.username }}!
+            </div>
+        </div>
+        <form action="/test/"><button class="btn btn-success ans-btn" type="submit">Начать тест</button></form>
+    {% else %}
+        <div class="alert-box">
+            <div class="alert alert-warning" role="alert">
+                Приветствую тебя на проекте Learn-anatomy! Чтобы начать работу, нужно войти в свой аккаунт или зарегистрироваться.
+            </div>
+        </div>
+        <form action="/accounts/login"><button class="btn btn-success ans-btn" type="submit">Вход</button></form>
+        <form action="/accounts/register"><button class="btn btn-success ans-btn" type="submit">Регистрация</button></form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="alert-box">
+    </div>
+    <div class="">
+        {% for bone in bones %}
+            <div class="">
+                <p>{{ bone.name_rus }}</p>
+                <p>{{ bone.name_lat }}</p>
+                <p>{{ bone.info }}</p>
+                <img src="../../{{ bone.picture.url }}" width="400px" height="400px">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
