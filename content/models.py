@@ -4,6 +4,7 @@ from django.db import models
 class BoneType(models.Model):
     name = models.CharField(max_length=32, verbose_name='Название')
     variable = models.CharField(max_length=32, verbose_name='Переменная')
+    picture = models.ImageField(upload_to='bones/covers', blank=True, null=True, verbose_name='Изображение')
 
     def __str__(self):
         return "%s" % self.name
@@ -32,6 +33,7 @@ class Bone(models.Model):
 class MuscleType(models.Model):
     name = models.CharField(max_length=32, verbose_name='Название')
     variable = models.CharField(max_length=32, verbose_name='Переменная')
+    picture = models.ImageField(upload_to='muscles/covers', blank=True, null=True, verbose_name='Изображение')
 
     def __str__(self):
         return "%s" % self.name

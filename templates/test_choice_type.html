@@ -13,7 +13,9 @@
                 <div class="col-md-3">
                     <div class="item" onclick="location.href='{{ type.variable }}/undefined'">
                         {{ type.name }}
-                        <img src="none.png">
+                        {% if type.picture %}
+                            <img src="../../{{ type.picture.url }}">
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

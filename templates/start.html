@@ -8,14 +8,79 @@
                 Добро пожаловать, {{ user.username }}!
             </div>
         </div>
-        <form action="/test/"><button class="btn btn-success ans-btn" type="submit">Начать тест</button></form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="item" onclick="location.href='info/'">
+                        Справочные материалы
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item" onclick="location.href='test/'">
+                        Тест по латинским названиям
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item" onclick="location.href='none/'">
+                        Тест по кардиограмме
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item" onclick="location.href='none/'">
+                        Хз что-то ещё
+
+                    </div>
+                </div>
+            </div>
+        </div>
     {% else %}
         <div class="alert-box">
             <div class="alert alert-warning" role="alert">
-                Приветствую тебя на проекте Learn-anatomy! Чтобы начать работу, нужно войти в свой аккаунт или зарегистрироваться.
+                Приветствую тебя на проекте Learn-anatomy!
             </div>
         </div>
-        <form action="/accounts/login"><button class="btn btn-success ans-btn" type="submit">Вход</button></form>
-        <form action="/accounts/register"><button class="btn btn-success ans-btn" type="submit">Регистрация</button></form>
+        На данном сайте вы можете:<br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-item-top">
+                        Найти множество справочных материалов
+                    </div>
+                    <div class="info-item-bottom">
+                        <img src="static/startscreen_anatomy.png" height="200">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-item-top">
+                        Проверить свои знания латинских названий анатомических элементов
+                    </div>
+                    <div class="info-item-bottom">
+                        <img src="static/startscreen_anatomy.png" height="200">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-item-top">
+                        Проверить свои знания кардиограммы
+                    </div>
+                    <div class="info-item-bottom">
+                        <img src="static/startscreen_anatomy.png" height="200">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-item-top">
+                        Хз что-то ещё
+                    </div>
+                    <div class="info-item-bottom">
+                        <img src="static/startscreen_anatomy.png" height="200">
+                    </div>
+                </div>
+            </div>
+        Для начала работы вам необходимо войти в свой аккаунт или зарегистрироваться:
+        </div>
+        <form class="inline-btn" action="/accounts/login"><button class="btn btn-success ans-btn" type="submit">Вход</button></form>
+        <form class="inline-btn" action="/accounts/register"><button class="btn btn-success ans-btn" type="submit">Регистрация</button></form>
     {% endif %}
 {% endblock %}
