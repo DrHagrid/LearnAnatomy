@@ -34,6 +34,7 @@ def test_choice_type(request, element_group):
             user_data[element_group + "_" + type.variable] = {'correct': 0, 'incorrect': 0, 'hint': 0}
             user_info.set_data(user_data)
             user_info.save(force_update=True)
+            e = user_data[element_group + "_" + type.variable]
         if e['correct'] == 0 and e['incorrect'] == 0:
             status = 'none'
         elif e['incorrect'] == 0 and e['correct'] > 0:
