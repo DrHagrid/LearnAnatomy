@@ -108,25 +108,25 @@ form {
 }
 
 .status-bad {
-    background-color: #ff6666;
+    background-color: #f5c2c2;
 }
 
 .status-bad:hover {
-    background-color: #eb6767;
+    background-color: #f7a7a7;
 }
 
 .status-good {
-    background-color: #ffcc33;
+    background-color: #f5e6c2;
 }
 
 .status-good:hover {
-    background-color: #ebb833;
+    background-color: #f7dfa7;
 }
 
 .status-excellent {
-    background-color: #33ff66;
+    background-color: #c5f5c2;
 }
 
 .status-excellent:hover {
-    background-color: #34eb66;
+    background-color: #abf7a7;
 }
