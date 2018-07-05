@@ -3,6 +3,15 @@
 
 {% block content %}
     <div class="">
+        <div class="head">
+            <a href="/">Главная</a>
+            /
+            <a href="/test">Тест по латинским названиям</a>
+            /
+            <a href="/test/{{ element_group }}">{{ element.class_name }}</a>
+            /
+            {{ element.type.name }}
+        </div>
         <div class="alert-box">
             <div class="alert alert-warning" role="alert">
                 Назовите данный анатомический элемент на латинском

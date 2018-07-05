@@ -15,6 +15,7 @@ class BoneType(models.Model):
 
 
 class Bone(models.Model):
+    class_name = 'Кости'
     name_rus = models.CharField(max_length=64, verbose_name='Название на русском')
     name_lat = models.CharField(max_length=64, verbose_name='Название на латинском')
     type = models.ForeignKey(BoneType, blank=True, null=True, on_delete=models.DO_NOTHING, verbose_name='Отдел скелета')
@@ -44,6 +45,7 @@ class MuscleType(models.Model):
 
 
 class Muscle(models.Model):
+    class_name = 'Мышцы'
     name_rus = models.CharField(max_length=64, verbose_name='Название на русском')
     name_lat = models.CharField(max_length=64, verbose_name='Название на латинском')
     type = models.ForeignKey(MuscleType, blank=True, null=True, on_delete=models.DO_NOTHING, verbose_name='Отдел')

@@ -20,6 +20,7 @@ def test_choice_group(request):
 
 
 def test_choice_type(request, element_group):
+    class_name = element_groups.get(element_group).class_name
     types = element_types.get(element_group).objects.all()
     user_info = UserInfo.objects.get(user=request.user)
     if user_info.data:
@@ -64,5 +65,5 @@ def test(request, element_group, element_type, element_id):
 
 def stat(request, element_group, element_type):
     group_class = element_groups.get(element_group)
-    type_class = element_types.get(element_group)
+    type_class = element_types.get(element_group).objects.get(variable=element_type)
     return render(request, 'stat.html', locals())

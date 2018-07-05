@@ -2,6 +2,13 @@
 {% load staticfiles %}
 
 {% block content %}
+    <div class="head">
+    <a href="/">Главная</a>
+    /
+    <a href="/test">Тест по латинским названиям</a>
+    /
+    {{ class_name }}
+</div>
     <div class="alert-box">
         <div class="alert alert-warning" role="alert">
             Выберите раздел для изучения

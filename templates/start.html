@@ -3,6 +3,9 @@
 
 {% block content %}
     {% if user.is_authenticated %}
+        <div class="head">
+            Главная
+        </div>
         <div class="alert-box">
             <div class="alert alert-warning" role="alert">
                 Добро пожаловать, {{ user.username }}!
@@ -23,13 +26,13 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="item" onclick="location.href='none/'">
+                    <div class="item" onclick="location.href='/'">
                         Тест по кардиограмме
 
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="item" onclick="location.href='none/'">
+                    <div class="item" onclick="location.href='/'">
                         Хз что-то ещё
 
                     </div>
