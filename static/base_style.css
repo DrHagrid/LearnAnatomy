@@ -106,3 +106,27 @@ form {
     border-radius: 0px 0px 5px 5px;
     font-size: 13pt;
 }
+
+.status-bad {
+    background-color: #ff6666;
+}
+
+.status-bad:hover {
+    background-color: #eb6767;
+}
+
+.status-good {
+    background-color: #ffcc33;
+}
+
+.status-good:hover {
+    background-color: #ebb833;
+}
+
+.status-excellent {
+    background-color: #33ff66;
+}
+
+.status-excellent:hover {
+    background-color: #34eb66;
+}

@@ -11,12 +11,13 @@ $(document).ready(function () {
         }
     };
 
-    function check(element_group, element_type, element_id, answer){
+    function check(element_group, element_type, element_id, answer, start){
         var data = {};
         data.element_group = element_group;
         data.element_type = element_type;
         data.element_id = element_id;
         data.answer = answer;
+        data.start = start;
         var csrf_token = $('#check-answer [name="csrfmiddlewaretoken"]').val();
         data["csrfmiddlewaretoken"] = csrf_token;
 
@@ -29,7 +30,7 @@ $(document).ready(function () {
             cache:true,
             success: function(data){
                 $('.alert-box').html("");
-                if (data.response){
+                if (data.response == 'True'){
                     $('.alert-box').append('<div class="alert alert-success" role="alert">' + data.replica_success + '</div>');
                     $('.answer-box').html("");
                     $('.hint-box').html("");
@@ -51,12 +52,15 @@ $(document).ready(function () {
         e.preventDefault();
         var answer = $('#answer').val();
         var submit_btn = $('#submit_btn');
+        var start = submit_btn.attr("start");
+        submit_btn.attr('start', 'False');
+
         var element_group = submit_btn.data("element_group");
         var element_type = submit_btn.data("element_type");
         var element_id = submit_btn.data("element_id");
         var action = submit_btn.data("action");
         if (action == 'submit'){
-            check(element_group, element_type, element_id, answer);
+            check(element_group, element_type, element_id, answer, start);
         }
         if (action == 'next') {
             next(element_group, element_type, element_id);

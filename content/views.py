@@ -14,6 +14,7 @@ def check_answer(request):
     element_type = data.get("element_type")
     element_id = data.get("element_id")
     element = element_groups.get(element_group).objects.get(pk=element_id)
+    start = data.get("start")
 
     replica_success = random.choice([
         'Вы ответили верно! Поздравляю!',
@@ -26,7 +27,6 @@ def check_answer(request):
         'Не верно!'
     ])
 
-    #element_number = len(element.objects.all())
     return_dict["response"] = False
     initial = element.name_lat.lower().split(' ')
     entrance = answer.lower().split(' ')
@@ -50,15 +50,34 @@ def check_answer(request):
             else:
                 next_element_id = 0
 
-        #user_info = UserInfo.objects.get(user=request.user)
-        #user_info.last_reaction = next_bone_id
-        #user_info.save(force_update=True)
+        response = 'True'
 
-        return_dict["response"] = True
         return_dict["element_group"] = element_group
         return_dict["element_type"] = element_type
         return_dict["next_element_id"] = next_element_id
         return_dict["name_lat"] = element.name_lat
         return_dict["info"] = element.info
+    else:
+        response = 'False'
+
+    user_info = UserInfo.objects.get(user=request.user)
+
+    if user_info.data:
+        data_dict = user_info.get_data()
+    else:
+        data_dict = dict()
+
+    if response == 'True':
+        if start == 'True':
+            data_dict[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
+        data_dict[element_group + "_" + element_type]['correct'] += 1
+    else:
+        if start == 'True':
+            data_dict[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
+        data_dict[element_group + "_" + element_type]['incorrect'] += 1
+    user_info.set_data(data_dict)
+    user_info.save(force_update=True)
+
+    return_dict["response"] = response
 
     return JsonResponse(return_dict)

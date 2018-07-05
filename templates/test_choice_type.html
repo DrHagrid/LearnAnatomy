@@ -9,12 +9,12 @@
     </div>
     <div class="container">
         <div class="row">
-            {% for type in types %}
+            {% for e in total %}
                 <div class="col-md-3">
-                    <div class="item" onclick="location.href='{{ type.variable }}/undefined'">
-                        {{ type.name }}
-                        {% if type.picture %}
-                            <img src="../../{{ type.picture.url }}">
+                    <div class="item status-{{ e.status }}" onclick="location.href='{{ e.type.variable }}/undefined'">
+                        {{ e.type.name }}
+                        {% if e.type.picture %}
+                            <img src="../../{{ e.type.picture.url }}">
                         {% endif %}
                     </div>
                 </div>
