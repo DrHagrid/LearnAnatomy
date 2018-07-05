@@ -22,7 +22,10 @@ def test_choice_group(request):
 def test_choice_type(request, element_group):
     types = element_types.get(element_group).objects.all()
     user_info = UserInfo.objects.get(user=request.user)
-    user_data = user_info.get_data()
+    if user_info.data:
+        user_data = user_info.get_data()
+    else:
+        user_data = dict()
     total = list()
     for type in types:
         if element_group + "_" + type.variable in user_data.keys():
