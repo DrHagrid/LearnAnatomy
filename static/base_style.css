@@ -137,3 +137,8 @@ form {
 .status-excellent:hover {
     background-color: #abf7a7;
 }
+
+.align-left {
+    width: 100%;
+    text-align: left;
+}

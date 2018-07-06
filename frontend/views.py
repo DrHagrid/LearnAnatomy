@@ -66,4 +66,11 @@ def test(request, element_group, element_type, element_id):
 def stat(request, element_group, element_type):
     group_class = element_groups.get(element_group)
     type_class = element_types.get(element_group).objects.get(variable=element_type)
+
+    user_info = UserInfo.objects.get(user=request.user)
+    user_data = user_info.get_data()
+    correct = user_data[element_group + "_" + element_type]['correct']
+    incorrect = user_data[element_group + "_" + element_type]['incorrect']
+    hint = user_data[element_group + "_" + element_type]['hint']
+
     return render(request, 'stat.html', locals())
