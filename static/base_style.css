@@ -89,7 +89,7 @@ form {
     cursor: pointer;
 }
 
-.item img {
+.item-start img {
     position: absolute;
     bottom: 10px;
     left: 16.6%;
