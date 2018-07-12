@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.http import JsonResponse
 from django.shortcuts import render
 from latin.models import element_types, element_groups

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
