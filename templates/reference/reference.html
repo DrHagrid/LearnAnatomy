@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="head">
+        <a href="/">Главная</a>
+        /
+        <a href="/reference">Справочные материалы</a>
+        /
+        {{ article.title }}
+    </div>
+    <div class="alert-box">
+        <div class="alert alert-warning" role="alert">
+            {{ article.title }}
+        </div>
+    </div>
+    <div class="article-content">
+        {% autoescape off %}
+            {{ article.content }}
+        {% endautoescape %}
+    </div>
+    <div class="article-footer">
+        <b>Автор:</b> {{ article.author }}
+        <b>Дата:</b> {{ article.date }}
+        <b>Тэги:</b> {{ article.tags }}
+    </div>
+{% endblock %}
