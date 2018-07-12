@@ -89,6 +89,12 @@ form {
     cursor: pointer;
 }
 
+.item img {
+    position: absolute;
+    bottom: 10px;
+    left: 16.6%;
+}
+
 .inline-btn {
     display: inline-block;
 }
