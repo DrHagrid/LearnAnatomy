@@ -156,6 +156,10 @@ form {
     background-color: #525252;
 }
 
+.section-a {
+    font-size: 13pt;
+}
+
 .article-content {
     text-align: left;
     font-size: 13pt;
