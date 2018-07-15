@@ -17,10 +17,10 @@
             <div class="card">
                 <div class="card-header" id="heading{{ article_section.section.id }}">
                     <h5 class="mb-0">
-                        <li class="list-group-item  d-flex justify-content-between align-items-center section-title" data-toggle="collapse" data-target="#collapse{{ article_section.section.id }}" aria-expanded="true" aria-controls="collapse{{ article_section.section.id }}">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ article_section.section.id }}" aria-expanded="true" aria-controls="collapse{{ article_section.section.id }}">
                             {{ article_section.section.name }}
-                            <span class="badge badge-primary badge-pill">{{ article_section.count }}</span>
-                        </li>
+                            <span class="badge badge-secondary badge-pill ">{{ article_section.count }}</span>
+                        </button>
                     </h5>
                 </div>
 
