@@ -30,7 +30,7 @@ body {
 }
 
 .alert-box {
-
+    font-size: 13pt;
 }
 
 .hint-box {
@@ -66,26 +66,13 @@ form {
 }
 
 .item {
-    height: 200px;
-    background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    position: relative;
     padding: 5px;
     text-align:center;
     margin-bottom: 25px;
-    font-size: 13pt;
+    font-size: 11pt;
 }
 
-.item a {
-    display: block; /* Ссылка как блочный элемент */
-    /*height: 100%; /* Высота на весь слой */
-    color: #000 !important;
-    text-decoration: none;
-}
-
-.item:hover {
-    background-color: aliceblue;
+.item img:hover {
     cursor: pointer;
 }
 
