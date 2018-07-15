@@ -3,9 +3,9 @@ body {
 }
 
 .main-container {
-    width: 95%;
+    width: 100%;
     padding: 10% 0 0;
-    margin: auto;
+
 }
 
 .box {
@@ -13,7 +13,7 @@ body {
     position: relative;
     z-index: 1;
     background: white;
-    max-width: 75%;
+    min-width: 75%;
     margin: 0 auto 100px;
     padding: 25px;
     text-align: center;
@@ -46,8 +46,9 @@ form {
     white-space:nowrap;
 }
 
-.form-inline .form-control {
-    width: 250px;
+
+.answer-box {
+    margin-top: 10px;
 }
 
 .ans-btn {

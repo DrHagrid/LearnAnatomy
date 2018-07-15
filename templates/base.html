@@ -4,11 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content='width=device-width, initial-scale=1'/>
         <title>MedicalScience</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
         <link rel="stylesheet" href="{% static 'base_style.css' %}">
 
         <!-- Fonts -->
@@ -18,14 +19,12 @@
     <body>
         <div class="wrapper">
             <div class="wrapper-content">
-                <div class="container main-container">
+                <div class="container-fluid main-container">
                     <div class="row">
-                        <div class="col-md-12">
                             <div class="box">
                                 {% block content %}
                                 {% endblock %}
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

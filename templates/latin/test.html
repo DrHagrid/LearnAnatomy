@@ -17,11 +17,15 @@
                 Назовите данный анатомический элемент на латинском
             </div>
         </div>
-        <form id="check-answer" class="form-inline" action="{% url 'check_answer' %}">{% csrf_token %}
+        <form id="check-answer" action="{% url 'check_answer' %}">{% csrf_token %}
             <p>{{ element.name_rus }}</p>
-            <img src="../../../../{{ element.picture.url }}"><br>
-            <div class="form-group answer-box">
-                <input class="form-control ans-input" id="answer">
+            <img src="../../../../{{ element.picture.url }}">
+            <div class="row">
+                <div class="mx-auto">
+                    <div class="form-group answer-box">
+                        <input class="form-control ans-input" id="answer">
+                    </div>
+                </div>
             </div>
             <div class="hint-box"></div>
             <div class="form-group button-box">
