@@ -47,6 +47,7 @@ body {
 }
 
 .login-alert {
+    font-size: 12pt;
     width: 99%;
     margin: 5px auto;
 }

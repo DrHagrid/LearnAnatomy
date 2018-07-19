@@ -71,6 +71,11 @@ $(document).ready(function () {
         e.preventDefault();
         var name_lat = hint_btn.data("name_lat");
         $('.hint-box').html("");
-        $('.hint-box').append('<div class="alert alert-warning hint-alert" role="alert"> Подсказка: <b>' + name_lat + '</b></div>');
+        $('.hint-box').append('<div class="alert alert-warning alert-dismissible fade show" role="alert">\n' +
+            '            Подсказка: <b>' + name_lat +'</b>\n' +
+            '            <button type="button" class="close" data-dismiss="alert" aria-label="Close">\n' +
+            '                <span aria-hidden="true">&times;</span>\n' +
+            '            </button>\n' +
+            '        </div>');
     })
 });
