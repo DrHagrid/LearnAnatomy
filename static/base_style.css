@@ -1,10 +1,14 @@
+html {
+    overflow-x: hidden;
+}
+
 body {
     background: url(bg.png);
 }
 
 .main-container {
     width: 100%;
-    padding: 10% 0 0;
+    padding: 7% 0 0;
 
 }
 
@@ -13,7 +17,7 @@ body {
     position: relative;
     z-index: 1;
     background: white;
-    min-width: 75%;
+    width: 75%;
     margin: 0 auto 100px;
     padding: 25px;
     text-align: center;
@@ -22,18 +26,33 @@ body {
     font-size: 16pt;
 }
 
-.head {
+.account {
+    padding: 10px;
+    background: white;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    border-radius: 10px;
+}
+
+.way {
     width: 100%;
     display: inline-block;
-    font-size: 10pt;
     text-align: left;
+    font-size: 10pt;
 }
 
 .alert-box {
-    font-size: 13pt;
+    font-size: 12pt;
+}
+
+.login-alert {
+    width: 99%;
+    margin: 5px auto;
 }
 
 .hint-box {
+    font-size: 12pt;
     margin-bottom: 0;
     margin-top: 10px;
 }
@@ -132,9 +151,10 @@ form {
     background-color: #abf7a7;
 }
 
-.align-left {
+.stat {
     width: 100%;
     text-align: left;
+    font-size: 13pt;
 }
 
 .section-title {

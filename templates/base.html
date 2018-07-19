@@ -17,11 +17,23 @@
     </head>
 
     <body>
+        {% include 'anonymous.html' %}
         <div class="wrapper">
             <div class="wrapper-content">
                 <div class="container-fluid main-container">
                     <div class="row">
                             <div class="box">
+                                <div class="way">
+                                    {% block way %}
+                                    {% endblock %}
+                                </div>
+
+                                <div class="alert-box">
+
+                                    {% block alert %}
+                                    {% endblock %}
+                                </div>
+
                                 {% block content %}
                                 {% endblock %}
                             </div>

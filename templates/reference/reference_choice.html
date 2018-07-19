@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block way %}
+    <a href="/">Главная</a>
+    /
+    Справочные материалы
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
+        Выберите нужный раздел
+    </div>
+{% endblock %}
+
 {% block content %}
-    <div class="head">
-            <a href="/">Главная</a>
-            /
-            Справочные материалы
-    </div>
-    <div class="alert-box">
-        <div class="alert alert-warning" role="alert">
-            Выберите нужный раздел
-        </div>
-    </div>
     <div class="accordion" id="accordionExample">
         {% for article_section in article_section_list %}
             <div class="card">

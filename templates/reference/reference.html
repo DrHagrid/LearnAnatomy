@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block content %}
-    <div class="head">
-        <a href="/">Главная</a>
-        /
-        <a href="/reference">Справочные материалы</a>
-        /
+{% block way %}
+    <a href="/">Главная</a>
+    /
+    <a href="/reference">Справочные материалы</a>
+    /
+    {{ article.title }}
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
         {{ article.title }}
     </div>
-    <div class="alert-box">
-        <div class="alert alert-warning" role="alert">
-            {{ article.title }}
-        </div>
-    </div>
+{% endblock %}
+
+{% block content %}
     <div class="article-content">
         {% autoescape off %}
             {{ article.content }}

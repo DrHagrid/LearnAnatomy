@@ -3,11 +3,14 @@
 
 {% block content %}
     <h1>Регистрация</h1>
-    <form class="form-inline" action="." method="post">{% csrf_token %}
-        <label for="id_username">Логин:</label><br><input class="form-control" type="text" name="username" value="" id="username"><br>
-        <label for="id_password1">Пароль:</label><br><input class="form-control" type="password" name="password1" value="" id="password1"><br>
-        <label for="id_password2">Пароль(повтор):</label><br><input class="form-control" type="password" name="password2" value="" id="password2"><br>
-
+    <form action="." method="post">{% csrf_token %}
+        <div class="row">
+            <div class="mx-auto">
+                <label for="id_username">Логин:</label><br><input class="form-control form-account" type="text" name="username" value="" id="username">
+                <label for="id_password1">Пароль:</label><br><input class="form-control form-account" type="password" name="password1" value="" id="password1">
+                <label for="id_password2">Пароль(повтор):</label><br><input class="form-control form-account" type="password" name="password2" value="" id="password2">
+            </div>
+        </div>
         <input class="btn btn-success ans-btn" type="submit" value="Зарегистрироваться" />
     </form>
 

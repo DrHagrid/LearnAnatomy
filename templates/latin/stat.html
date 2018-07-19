@@ -1,28 +1,32 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block way %}
+    <a href="/">Главная</a>
+    /
+    <a href="/test">Тест по латинским названиям</a>
+    /
+    <a href="/test/{{ element_group }}">{{ group_class.class_name }}</a>
+    /
+    <a href="/test/{{ element_group }}/{{ element_type }}/undefined">{{ type_class.name }}</a>
+    /
+    Статистика
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
+        Вы закончили данный блок
+    </div>
+{% endblock %}
+
 {% block content %}
-    <div class="">
-        <div class="head">
-            <a href="/">Главная</a>
-            /
-            <a href="/test">Тест по латинским названиям</a>
-            /
-            <a href="/test/{{ element_group }}">{{ group_class.class_name }}</a>
-            /
-            <a href="/test/{{ element_group }}/{{ element_type }}/undefined">{{ type_class.name }}</a>
-            /
-            Статистика
-        </div>
-        <div class="alert-box">
-            <div class="alert alert-warning" role="alert">
-                Вы закончили данный блок
-            </div>
-        </div>
-        <div class="align-left">
+    <div class="stat">
+        {% if user.is_authenticated %}
             Решено верно: {{ correct }}<br>
             Решено неверно: {{ incorrect }}<br>
             Использовано подсказок: {{ hint }}<br>
-        </div>
+        {% else %}
+            Чтобы получать и сохранять полную статистику по пройденному блоку, необходимо войти в аккаунт!
+        {% endif %}
     </div>
 {% endblock %}

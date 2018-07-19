@@ -1,57 +1,27 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block way %}
+    Главная
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
+        Выберите нужный раздел
+    </div>
+{% endblock %}
+
 {% block content %}
-    {% if user.is_authenticated %}
-        <div class="head">
-            Главная
-        </div>
-        <div class="alert-box">
-            <div class="alert alert-warning" role="alert">
-                Добро пожаловать, {{ user.username }}!
+    <div class="container">
+        <div class="row">
+            <div class="item col-md-3">
+                <img src="static/covers/reference.png" onclick="location.href='reference/'">
+                <p>Справочные материалы</p>
+            </div>
+            <div class="item col-md-3">
+                <img src="static/covers/latin.png" onclick="location.href='test/'">
+                <p>Тест по латинским названиям</p>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="item col-md-3">
-                    <img src="static/covers/reference.png" onclick="location.href='reference/'">
-                    <p>Справочные материалы</p>
-                </div>
-                <div class="item col-md-3">
-                    <img src="static/covers/latin.png" onclick="location.href='test/'">
-                    <p>Тест по латинским названиям</p>
-                </div>
-            </div>
-        </div>
-    {% else %}
-        <div class="alert-box">
-            <div class="alert alert-warning" role="alert">
-                Приветствую тебя на проекте Learn-anatomy!
-            </div>
-        </div>
-        На данном сайте вы можете:<br><br>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="info-item-top">
-                        Найти множество справочных материалов
-                    </div>
-                    <div class="info-item-bottom">
-                        <img src="static/covers/startscreen_latin.png" height="200">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="info-item-top">
-                        Проверить свои знания латинских названий анатомических элементов
-                    </div>
-                    <div class="info-item-bottom">
-                        <img src="static/covers/startscreen_latin.png" height="200">
-                    </div>
-                </div>
-            </div>
-        Для начала работы вам необходимо войти в свой аккаунт или зарегистрироваться:
-        </div>
-        <form class="inline-btn" action="/accounts/login"><button class="btn btn-success ans-btn" type="submit">Вход</button></form>
-        <form class="inline-btn" action="/accounts/register"><button class="btn btn-success ans-btn" type="submit">Регистрация</button></form>
-    {% endif %}
+    </div>
 {% endblock %}

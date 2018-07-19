@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block content %}
-    <div class="head">
+{% block way %}
     <a href="/">Главная</a>
     /
     <a href="/test">Тест по латинским названиям</a>
     /
     {{ class_name }}
-</div>
-    <div class="alert-box">
-        <div class="alert alert-warning" role="alert">
-            Выберите раздел для изучения
-        </div>
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
+        Выберите нужный раздел
     </div>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <div class="row">
             {% for e in total %}

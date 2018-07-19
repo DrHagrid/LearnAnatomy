@@ -1,42 +1,42 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block way %}
+    <a href="/">Главная</a>
+    /
+    <a href="/test">Тест по латинским названиям</a>
+    /
+    <a href="/test/{{ element_group }}">{{ element.class_name }}</a>
+    /
+    {{ element.type.name }}
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
+        Назовите данный анатомический элемент на латинском
+    </div>
+{% endblock %}
+
 {% block content %}
-    <div class="">
-        <div class="head">
-            <a href="/">Главная</a>
-            /
-            <a href="/test">Тест по латинским названиям</a>
-            /
-            <a href="/test/{{ element_group }}">{{ element.class_name }}</a>
-            /
-            {{ element.type.name }}
-        </div>
-        <div class="alert-box">
-            <div class="alert alert-warning" role="alert">
-                Назовите данный анатомический элемент на латинском
-            </div>
-        </div>
-        <form id="check-answer" action="{% url 'check_answer' %}">{% csrf_token %}
-            <p>{{ element.name_rus }}</p>
-            <img src="../../../../{{ element.picture.url }}">
-            <div class="row">
-                <div class="mx-auto">
-                    <div class="form-group answer-box">
-                        <input class="form-control ans-input" id="answer">
-                    </div>
+    <form id="check-answer" action="{% url 'check_answer' %}">{% csrf_token %}
+        <p>{{ element.name_rus }}</p>
+        <img src="../../../../{{ element.picture.url }}">
+        <div class="row">
+            <div class="mx-auto">
+                <div class="form-group answer-box">
+                    <input class="form-control" id="answer">
                 </div>
             </div>
-            <div class="hint-box"></div>
-            <div class="form-group button-box">
-                <button class="btn btn-success ans-btn" id="submit_btn" data-action="submit" data-element_group="{{ element_group }}"
-                        data-element_type="{{ element_type }}" data-element_id="{{ element.id }}" start="{{ start }}">
-                    Ответить
-                </button>
-                <button class="btn btn-warning ans-btn" id="hint_btn" data-action="hint" data-name_lat="{{ element.name_lat }}">
-                    Подсказка
-                </button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="hint-box"></div>
+        <div class="form-group button-box">
+            <button class="btn btn-success ans-btn" id="submit_btn" data-action="submit" data-element_group="{{ element_group }}"
+                    data-element_type="{{ element_type }}" data-element_id="{{ element.id }}" start="{{ start }}">
+                Ответить
+            </button>
+            <button class="btn btn-warning ans-btn" id="hint_btn" data-action="hint" data-name_lat="{{ element.name_lat }}">
+                Подсказка
+            </button>
+        </div>
+    </form>
 {% endblock %}
