@@ -62,7 +62,7 @@ def check_answer(request):
         response = 'False'
 
     # Если пользователь зарегистрирован, то сохранить статистику
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user_info = UserInfo.objects.get(user=request.user)
 
         if user_info.data:
@@ -98,7 +98,7 @@ def test_choice_type(request, element_group):
     types = element_types.get(element_group).objects.all()  # Список с типами анатомических элементов
 
     # Если пользователь зарегистрирован, то получить user_data
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user_info = UserInfo.objects.get(user=request.user)
         if user_info.data:
             user_data = user_info.get_data()
@@ -109,7 +109,7 @@ def test_choice_type(request, element_group):
 
     for type in types:
         # Если пользователь зарегистрирован, то загрузить/создать статистику
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             if element_group + "_" + type.variable in user_data.keys():
                 e = user_data[element_group + "_" + type.variable]
             else:
@@ -156,7 +156,7 @@ def stat(request, element_group, element_type):
     type_class = element_types.get(element_group).objects.get(variable=element_type)
 
     # Если пользователь зарегистрирован, то загрузить статистику
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user_info = UserInfo.objects.get(user=request.user)
         user_data = user_info.get_data()
         correct = user_data[element_group + "_" + element_type]['correct']
