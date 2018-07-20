@@ -6,7 +6,7 @@ from .models import UserInfo
 
 
 def distribution(request):
-    if not request.user.is_anonymous:
+    if request.user.is_authenticated:
         user_info, created = UserInfo.objects.get_or_create(user=request.user)
     return render(request, 'start.html', locals())
 

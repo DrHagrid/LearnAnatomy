@@ -3,28 +3,40 @@ from .models import *
 
 
 class BoneTypeAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in BoneType._meta.fields]
+    list_display = ['id', 'name', 'variable']
+    list_display_links = ['id', 'name']
 
     class Meta:
         model = BoneType
 
 
 class BoneAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Bone._meta.fields]
+    list_display = ['id', 'name_rus', 'name_lat', 'type', 'is_active']
+    list_display_links = ['id', 'name_rus']
+    list_editable = ['is_active', ]
+
+    list_filter = ['type', ]
+    search_fields = ['name_rus', 'name_lat']
 
     class Meta:
         model = Bone
 
 
 class MuscleTypeAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in MuscleType._meta.fields]
+    list_display = ['id', 'name', 'variable']
+    list_display_links = ['id', 'name']
 
     class Meta:
         model = MuscleType
 
 
 class MuscleAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Muscle._meta.fields]
+    list_display = ['id', 'name_rus', 'name_lat', 'type', 'is_active']
+    list_display_links = ['id', 'name_rus']
+    list_editable = ['is_active', ]
+
+    list_filter = ['type', ]
+    search_fields = ['name_rus', 'name_lat']
 
     class Meta:
         model = Muscle

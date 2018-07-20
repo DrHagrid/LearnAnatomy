@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from reference.models import ArticleSection, Article
+from reference.models import ArticleSection, Article, Picture
 
 
 def reference_choice(request):
@@ -14,4 +14,8 @@ def reference_choice(request):
 
 def reference(request, article_id):
     article = Article.objects.get(pk=article_id)
+    pics = Picture.objects.all()
+    pictures = dict()
+    for pic in pics:
+        pictures[pic.id] = pic
     return render(request, 'reference/reference.html', locals())

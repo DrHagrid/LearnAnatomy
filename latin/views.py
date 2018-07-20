@@ -66,19 +66,19 @@ def check_answer(request):
         user_info = UserInfo.objects.get(user=request.user)
 
         if user_info.data:
-            data_dict = user_info.get_data()
+            user_data = user_info.get_data()
         else:
-            data_dict = dict()
+            user_data = dict()
 
         if response == 'True':
             if start == 'True':
-                data_dict[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
-            data_dict[element_group + "_" + element_type]['correct'] += 1
+                user_data[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
+                user_data[element_group + "_" + element_type]['correct'] += 1
         else:
             if start == 'True':
-                data_dict[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
-            data_dict[element_group + "_" + element_type]['incorrect'] += 1
-        user_info.set_data(data_dict)
+                user_data[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
+            user_data[element_group + "_" + element_type]['incorrect'] += 1
+        user_info.set_data(user_data)
         user_info.save(force_update=True)
 
     return_dict["response"] = response

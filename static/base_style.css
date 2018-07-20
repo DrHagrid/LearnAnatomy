@@ -107,71 +107,9 @@ form {
     display: inline-block;
 }
 
-.info-item-top {
-    min-height: 60px;
-    padding-top: 5px;
-    background-color: #bbe5fd;
-    position: relative;
-    text-align:center;
-    border-radius: 5px 5px 0px 0px;
-    font-size: 13pt;
-}
-
-.info-item-bottom {
-    min-height: 210px;
-    background-color: aliceblue;
-    position: relative;
-    text-align:center;
-    padding-top: 5px;
-    margin-bottom: 25px;
-    border-radius: 0px 0px 5px 5px;
-    font-size: 13pt;
-}
-
-.status-bad {
-    background-color: #f5c2c2;
-}
-
-.status-bad:hover {
-    background-color: #f7a7a7;
-}
-
-.status-good {
-    background-color: #f5e6c2;
-}
-
-.status-good:hover {
-    background-color: #f7dfa7;
-}
-
-.status-excellent {
-    background-color: #c5f5c2;
-}
-
-.status-excellent:hover {
-    background-color: #abf7a7;
-}
-
 .align-left {
     width: 100%;
     text-align: left;
-    font-size: 13pt;
-}
-
-.section-title {
-    background-color: white;
-}
-
-.section-title:hover {
-    background-color: aliceblue;
-    cursor: pointer;
-}
-
-.section-title span {
-    background-color: #525252;
-}
-
-.section-a {
     font-size: 13pt;
 }
 
@@ -186,5 +124,3 @@ form {
     text-align: left;
     font-size: 8pt;
 }
-
-.list-group-flush .list-group-item{border-right:0;border-left:0;border-radius:0}.list-group-flush:first-child .list-group-item:first-child{border-top:0}.list-group-flush:last-child .list-group-item:last-child{border-bottom:0}

@@ -3,7 +3,9 @@ from .models import *
 
 
 class UserInfoAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in UserInfo._meta.fields]
+    list_display = ['id', 'user']
+    list_display_links = ['id', 'user']
+    #readonly_fields = ['data', ]
 
     class Meta:
         model = UserInfo

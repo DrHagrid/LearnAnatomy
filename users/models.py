@@ -6,7 +6,7 @@ import json
 
 class UserInfo(models.Model):
     user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.DO_NOTHING)
-    data = models.TextField(blank=True, null=True, verbose_name='JSON', help_text='Служебное поле. В будущем вы его не увидите.')
+    data = models.TextField(blank=True, null=True, verbose_name='Данные', help_text='Поле для хранения JSON информации')
 
     def set_data(self, x):
         self.data = json.dumps(x)
