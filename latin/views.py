@@ -115,7 +115,7 @@ def test_choice_type(request, element_group):
             if element_group + "_" + type.variable in user_data.keys():
                 e = user_data[element_group + "_" + type.variable]
             else:
-                user_data[element_group + "_" + type.variable] = {'correct': 0, 'incorrect': 0, 'hint': 0}
+                user_data[element_group + "_" + type.variable] = {'correct': 0, 'incorrect': 0, 'incorrect_list': []}
                 user_info.set_data(user_data)
                 user_info.save(force_update=True)
                 e = user_data[element_group + "_" + type.variable]
