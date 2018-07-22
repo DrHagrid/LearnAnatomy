@@ -56,6 +56,10 @@ body {
     margin: 5px auto;
 }
 
+#register-info-link {
+    font-size: 10pt;
+}
+
 .hint-box {
     font-size: 12pt;
     margin-bottom: 0;
