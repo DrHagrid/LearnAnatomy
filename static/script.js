@@ -44,6 +44,7 @@ $(document).ready(function () {
                 }
                 else {
                     $('.alert-box').append('<div class="alert alert-danger" role="alert">' + data.replica_fail + '</div>');
+                    $('#hint_btn').removeAttr("disabled");
                 }
             },
             error: function(){
