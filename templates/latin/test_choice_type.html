@@ -19,11 +19,12 @@
     <div class="container">
         <div class="row">
             {% for e in total %}
-                <div class="item col-md-3 status-{{ e.status }}">
+                <div class="item col-md-3">
                     {% if e.type.picture %}
                         <img src="../../{{ e.type.picture.url }}" onclick="location.href='{{ e.type.variable }}/undefined'">
                     {% endif %}
-                        <p>{{ e.type.name }}</p>
+                    <p class="no-margin">{{ e.type.name }}</p>
+                    <img src="../../static/media/latin/{{ e.status }}.png" data-toggle="tooltip" data-placement="bottom" title="Статистика" onclick="location.href='../../stat/{{ element_group }}/{{ e.type.variable }}'">
                 </div>
             {% endfor %}
         </div>

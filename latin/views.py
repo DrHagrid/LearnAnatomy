@@ -72,12 +72,14 @@ def check_answer(request):
 
         if response == 'True':
             if start == 'True':
-                user_data[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
-                user_data[element_group + "_" + element_type]['correct'] += 1
+                user_data[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'incorrect_list': []}
+            user_data[element_group + "_" + element_type]['correct'] += 1
         else:
             if start == 'True':
-                user_data[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'hint': 0}
+                user_data[element_group + "_" + element_type] = {'correct': 0, 'incorrect': 0, 'incorrect_list': []}
             user_data[element_group + "_" + element_type]['incorrect'] += 1
+            if not any(element_id in el for el in user_data[element_group + "_" + element_type]['incorrect_list']):
+                user_data[element_group + "_" + element_type]['incorrect_list'].append(element_id)
         user_info.set_data(user_data)
         user_info.save(force_update=True)
 
@@ -161,6 +163,10 @@ def stat(request, element_group, element_type):
         user_data = user_info.get_data()
         correct = user_data[element_group + "_" + element_type]['correct']
         incorrect = user_data[element_group + "_" + element_type]['incorrect']
-        hint = user_data[element_group + "_" + element_type]['hint']
+        incorrect_list = list()
+        for e in user_data[element_group + "_" + element_type]['incorrect_list']:
+            incorrect_list.append(group_class.objects.get(pk=e))
+
+        total = len(group_class.objects.filter(type=type_class))
 
     return render(request, 'latin/stat.html', locals())

@@ -6,6 +6,10 @@ body {
     background: url(bg.png);
 }
 
+.off {
+    background-color: white;
+}
+
 .main-container {
     width: 100%;
     padding: 7% 0 0;
@@ -97,12 +101,6 @@ form {
     cursor: pointer;
 }
 
-.item-start img {
-    position: absolute;
-    bottom: 10px;
-    left: 16.6%;
-}
-
 .inline-btn {
     display: inline-block;
 }
@@ -123,4 +121,12 @@ form {
     display: inline-block;
     text-align: left;
     font-size: 8pt;
+}
+
+.card-body {
+    font-size: 11pt;
+}
+
+.no-margin {
+    margin: 0;
 }

@@ -22,7 +22,6 @@ class Bone(models.Model):
     type = models.ForeignKey(BoneType, blank=True, null=True, on_delete=models.DO_NOTHING, verbose_name='Отдел скелета')
     info = models.TextField(blank=True, null=True, verbose_name='Информация')
     picture = models.ImageField(upload_to='latin/bones', blank=True, null=True, verbose_name='Изображение')
-    is_active = models.BooleanField(default=True, verbose_name='Отображать данный элемент на сайте')
 
     def __str__(self):
         return "%s" % self.name_rus
@@ -52,7 +51,6 @@ class Muscle(models.Model):
     type = models.ForeignKey(MuscleType, blank=True, null=True, on_delete=models.DO_NOTHING, verbose_name='Отдел')
     info = models.TextField(blank=True, null=True, verbose_name='Информация')
     picture = models.ImageField(upload_to='latin/muscles', blank=True, null=True, verbose_name='Изображение')
-    is_active = models.BooleanField(default=True, verbose_name='Отображать данный элемент на сайте')
 
     def __str__(self):
         return "%s" % self.name_rus

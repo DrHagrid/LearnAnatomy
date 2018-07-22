@@ -1,3 +1,7 @@
+$(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
 $(document).ready(function () {
     var form = $('#check-answer');
     var hint_btn = $('#hint_btn');
@@ -78,4 +82,6 @@ $(document).ready(function () {
             '            </button>\n' +
             '        </div>');
     })
+
+
 });

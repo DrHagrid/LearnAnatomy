@@ -15,16 +15,41 @@
 
 {% block alert %}
     <div class="alert alert-warning" role="alert">
-        Вы закончили данный блок
+        Статистика блока "{{ type_class.name }}"
     </div>
 {% endblock %}
 
 {% block content %}
-    <div class="stat">
+    <div class="stat align-left">
         {% if user.is_authenticated %}
-            Решено верно: {{ correct }}<br>
-            Решено неверно: {{ incorrect }}<br>
-            Использовано подсказок: {{ hint }}<br>
+            <p class="text-center"><img src="../../../{{ type_class.picture.url }}" class="img-responsive"></p>
+            <b><p class="text-center">Общая статистика:</p></b>
+
+            <ul class="list-group">
+                <li class="list-group-item">Заданий всего: {{ total }}</li>
+                <li class="list-group-item">Решено верно: {{ correct }}</li>
+                <li class="list-group-item">Совершено ошибок: {{ incorrect }}</li>
+            </ul>
+
+            <br>
+            <b><p class="text-center">Элементы в которых были совершены ошибки:</p></b>
+
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Русское название</th>
+                        <th scope="col">Латинское название</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for element in incorrect_list %}
+                    <tr>
+                        <td>{{ element.name_rus }}</td>
+                        <td>{{ element.name_lat }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         {% else %}
             Чтобы получать и сохранять полную статистику по пройденному блоку, необходимо войти в аккаунт!
         {% endif %}

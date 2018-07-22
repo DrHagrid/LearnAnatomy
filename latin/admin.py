@@ -11,9 +11,8 @@ class BoneTypeAdmin(admin.ModelAdmin):
 
 
 class BoneAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name_rus', 'name_lat', 'type', 'is_active']
+    list_display = ['id', 'name_rus', 'name_lat', 'type']
     list_display_links = ['id', 'name_rus']
-    list_editable = ['is_active', ]
 
     list_filter = ['type', ]
     search_fields = ['name_rus', 'name_lat']
@@ -31,9 +30,8 @@ class MuscleTypeAdmin(admin.ModelAdmin):
 
 
 class MuscleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name_rus', 'name_lat', 'type', 'is_active']
+    list_display = ['id', 'name_rus', 'name_lat', 'type']
     list_display_links = ['id', 'name_rus']
-    list_editable = ['is_active', ]
 
     list_filter = ['type', ]
     search_fields = ['name_rus', 'name_lat']
