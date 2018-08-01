@@ -4,7 +4,7 @@
 {% block way %}
     <a href="/">Главная</a>
     /
-    <a href="/test">Тест по латинским названиям</a>
+    <a href="/latin">Тест по латинским названиям</a>
     /
     {{ class_name }}
 {% endblock %}
@@ -24,7 +24,7 @@
                         <img src="../../{{ e.type.picture.url }}" onclick="location.href='{{ e.type.variable }}/undefined'">
                     {% endif %}
                     <p class="no-margin">{{ e.type.name }}</p>
-                    <img src="../../static/media/latin/{{ e.status }}.png" data-toggle="tooltip" data-placement="bottom" title="Статистика" onclick="location.href='../../stat/{{ element_group }}/{{ e.type.variable }}'">
+                    <img src="../../static/media/latin/{{ e.status }}.png" data-toggle="tooltip" data-placement="bottom" title="Статистика" onclick="location.href='../../latin/stat/{{ element_group }}/{{ e.type.variable }}'">
                 </div>
             {% endfor %}
         </div>

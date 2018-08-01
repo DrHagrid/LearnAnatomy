@@ -2,9 +2,9 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^check_answer/$', views.check_answer, name='check_answer'),
-    url(r'^test/$', views.test_choice_group, name='test_choice_group'),
-    url(r'^test/(?P<element_group>\w+)/$', views.test_choice_type, name='test_choice_type'),
-    url(r'^test/(?P<element_group>\w+)/(?P<element_type>\w+)/(?P<element_id>\w+)/$', views.test, name='test'),
-    url(r'^stat/(?P<element_group>\w+)/(?P<element_type>\w+)/$', views.stat, name='stat')
+    url(r'^latin/check/$', views.latin_check, name='latin_check'),
+    url(r'^latin/stat/(?P<element_group>\w+)/(?P<element_type>\w+)/$', views.latin_stat, name='latin_stat'),
+    url(r'^latin/$', views.latin_choice_group, name='latin_choice_group'),
+    url(r'^latin/(?P<element_group>\w+)/$', views.latin_choice_type, name='latin_choice_type'),
+    url(r'^latin/(?P<element_group>\w+)/(?P<element_type>\w+)/(?P<element_id>\w+)/$', views.latin, name='latin'),
 ]

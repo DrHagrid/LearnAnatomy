@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block way %}
+    <a href="/">Главная</a>
+    /
+    Тест по гистологии
+{% endblock %}
+
+{% block alert %}
+    <div class="alert alert-warning" role="alert">
+        Выберите название изображенного препарата
+    </div>
+{% endblock %}
+
+{% block content %}
+    <img src="../../{{ element.picture.url }}" class="img-responsive">
+    <div class="info invisible" id="sample-info">
+        {% autoescape off %}
+            <p class="text-center"><strong>{{ element.correct_option }}</strong></p>
+            {{ element.info }}
+        {% endautoescape %}
+    </div>
+    <form id="check-answer" action="{% url 'histology_check' %}">{% csrf_token %}
+        <div class="row">
+            <div class="center">
+                <div class="control-group radio-box">
+                    {% for option in element_options %}
+                        <label class="control control-radio">
+                            {{ option }}
+                            <input type="radio" name="histology" value="{% if option == element.correct_option %}correct{% else %}incorrect{% endif %}"/>
+                            <div class="control_indicator"></div>
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="hint-box"></div>
+        <div class="form-group button-box">
+            <button class="btn btn-success ans-btn" id="submit_btn" type="histology" data-action="submit" data-element_id="{{ element.id }}" start="{{ start }}">
+                Ответить
+            </button>
+        </div>
+    </form>
+{% endblock %}

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'users.apps.ContentConfig',
     'reference.apps.ContentConfig',
     'latin.apps.ContentConfig',
+    'histology.apps.ContentConfig'
 ]
 
 MIDDLEWARE = [

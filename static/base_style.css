@@ -79,6 +79,16 @@ form {
     margin-top: 10px;
 }
 
+.radio-box {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.radio-box p {
+    width: 100%;
+    text-align: left;
+}
+
 .ans-btn {
     min-width: 100px;
     margin-top: 10px;
@@ -109,15 +119,11 @@ form {
     display: inline-block;
 }
 
-.align-left {
-    width: 100%;
-    text-align: left;
-    font-size: 13pt;
-}
-
 .article-content {
     text-align: left;
     font-size: 13pt;
+    word-wrap: break-word;
+    display: block;
 }
 
 .article-footer {
@@ -131,6 +137,34 @@ form {
     font-size: 11pt;
 }
 
+.info {
+    text-align: left;
+    font-size: 14pt;
+    word-wrap: break-word;
+    display: block;
+}
+
+/* Общие классы */
+
+.align-left {
+    width: 100%;
+    text-align: left;
+    font-size: 13pt;
+}
+
 .no-margin {
     margin: 0;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.text-center {
+    margin: 0;
+}
+
+.invisible {
+    display: none;
 }

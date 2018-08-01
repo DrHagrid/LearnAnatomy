@@ -7,7 +7,7 @@ import random
 
 
 # Проверка ответа
-def check_answer(request):
+def latin_check(request):
     return_dict = dict()
     data = request.POST
     answer = data.get("answer")
@@ -89,13 +89,13 @@ def check_answer(request):
 
 
 # Страница выбора группы элементов
-def test_choice_group(request):
+def latin_choice_group(request):
 
     return render(request, 'latin/test_choice_group.html', locals())
 
 
 # Страница выбора отдела
-def test_choice_type(request, element_group):
+def latin_choice_type(request, element_group):
     class_name = element_groups.get(element_group).class_name  # Название отдела
     types = element_types.get(element_group).objects.all()  # Список с типами анатомических элементов
 
@@ -135,7 +135,7 @@ def test_choice_type(request, element_group):
 
 
 # Страница теста
-def test(request, element_group, element_type, element_id):
+def latin(request, element_group, element_type, element_id):
     group_class = element_groups.get(element_group)
     type_class = element_types.get(element_group).objects.get(variable=element_type)
 
@@ -153,7 +153,7 @@ def test(request, element_group, element_type, element_id):
 
 
 # Страница статистики
-def stat(request, element_group, element_type):
+def latin_stat(request, element_group, element_type):
     group_class = element_groups.get(element_group)
     type_class = element_types.get(element_group).objects.get(variable=element_type)
 

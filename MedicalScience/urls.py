@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'', include('users.urls')),
     url(r'', include('reference.urls')),
     url(r'', include('latin.urls')),
+    url(r'', include('histology.urls')),
 ]
