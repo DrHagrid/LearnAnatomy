@@ -4,7 +4,9 @@
 {% block way %}
     <a href="/">Главная</a>
     /
-    Тест по гистологии
+    <a href="/histology">Тест по гистологии</a>
+    /
+    {{ type_class.name }}
 {% endblock %}
 
 {% block alert %}
@@ -14,10 +16,9 @@
 {% endblock %}
 
 {% block content %}
-    <img src="../../{{ element.picture.url }}" class="img-responsive">
-    <div class="info invisible" id="sample-info">
+    <img src="../../../{{ element.picture.url }}" class="test-img img-responsive">
+    <div class="info invisible">
         {% autoescape off %}
-            <p class="text-center"><strong>{{ element.correct_option }}</strong></p>
             {{ element.info }}
         {% endautoescape %}
     </div>
@@ -37,7 +38,8 @@
         </div>
         <div class="hint-box"></div>
         <div class="form-group button-box">
-            <button class="btn btn-success ans-btn" id="submit_btn" type="histology" data-action="submit" data-element_id="{{ element.id }}" start="{{ start }}">
+            <button class="btn btn-success ans-btn" id="submit_btn" type="histology" data-action="submit"
+                    data-element_type="{{ element_type }}" data-element_id="{{ element.id }}" start="{{ start }}">
                 Ответить
             </button>
         </div>

@@ -22,8 +22,21 @@
 {% block content %}
     <div class="stat align-left">
         {% if user.is_authenticated %}
-            <p class="text-center"><img src="../../../{{ type_class.picture.url }}" class="img-responsive"></p>
+            <p class="text-center"><img src="../../../../{{ type_class.picture.url }}" class="img-responsive"></p>
             <b><p class="text-center">Общая статистика:</p></b>
+
+            <div class="row">
+                <div class="stat-progress col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width:{{ correct_percent }}%">
+                            {{ correct_percent }}%
+                        </div>
+                        <div class="progress-bar bg-danger" role="progressbar" style="width:{{ incorrect_percent }}%">
+                            {{ incorrect_percent }}%
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <ul class="list-group">
                 <li class="list-group-item">Заданий всего: {{ total }}</li>

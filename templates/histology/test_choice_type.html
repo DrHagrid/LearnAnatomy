@@ -4,9 +4,7 @@
 {% block way %}
     <a href="/">Главная</a>
     /
-    <a href="/latin">Тест по латинскому языку</a>
-    /
-    {{ class_name }}
+    Тест по гистологии
 {% endblock %}
 
 {% block alert %}
@@ -24,7 +22,7 @@
                         <img src="../../{{ e.type.picture.url }}" class="icon img-responsive" onclick="location.href='{{ e.type.variable }}/undefined'">
                     {% endif %}
                     <p class="no-margin">{{ e.type.name }}</p>
-                    <img src="../../static/media/latin/{{ e.status }}.png" class="status-img img-responsive" data-toggle="tooltip" data-placement="bottom" title="Статистика" onclick="location.href='../../latin/stat/{{ element_group }}/{{ e.type.variable }}'">
+                    <img src="../../static/media/latin/{{ e.status }}.png" class="status-img img-responsive" data-toggle="tooltip" data-placement="bottom" title="Статистика" onclick="location.href='../../histology/stat/{{ e.type.variable }}'">
                 </div>
             {% endfor %}
         </div>

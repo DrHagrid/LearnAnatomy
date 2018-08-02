@@ -53,8 +53,9 @@ $(document).ready(function () {
         });
     };
 
-    function histology_check(element_id, answer, start){
+    function histology_check(element_type, element_id, answer, start){
         var data = {};
+        data.element_type = element_type;
         data.element_id = element_id;
         data.answer = answer;
         data.start = start;
@@ -75,7 +76,7 @@ $(document).ready(function () {
                     $('.radio-box').html("");
                     $('.info').removeClass("invisible");
                     $('.button-box').html("");
-                    $('.button-box').append('<button class="btn btn-success ans-btn" id="submit_btn" type="histology" data-action="next" data-element_id="' + data.next_element_id +'">Продолжить</button>');
+                    $('.button-box').append('<button class="btn btn-success ans-btn" id="submit_btn" type="histology" data-action="next" data-element_type="' + element_type + '" data-element_id="' + data.next_element_id +'">Продолжить</button>');
                 }
                 else {
                     $('.alert-box').append('<div class="alert alert-danger" role="alert">' + data.replica_fail + '</div>');
@@ -87,12 +88,12 @@ $(document).ready(function () {
         });
     };
 
-    function histology_next(element_id){
+    function histology_next(element_type, element_id){
         if (element_id != 0) {
-            document.location.href = '/histology/' + element_id;
+            document.location.href = '/histology/' + element_type + '/' + element_id + '/';
         }
         else {
-            document.location.href = '/histology/stat/';
+            document.location.href = '/histology/stat/' + element_type + '/';
         }
     };
 
@@ -118,15 +119,16 @@ $(document).ready(function () {
             }
         }
         if (type == 'histology') {
+            var element_type = submit_btn.data("element_type");
             var element_id = submit_btn.data("element_id");
             var action = submit_btn.data("action");
             var radio = $('input[name=histology]:checked');
             var answer = radio.val()
             if (action == 'submit') {
-                histology_check(element_id, answer, start);
+                histology_check(element_type, element_id, answer, start);
             }
             if (action == 'next') {
-                histology_next(element_id);
+                histology_next(element_type, element_id);
             }
         }
     })

@@ -4,11 +4,9 @@
 {% block way %}
     <a href="/">Главная</a>
     /
-    <a href="/latin">Тест по латинским названиям</a>
+    <a href="/histology">Тест по гистологии</a>
     /
-    <a href="/latin/{{ element_group }}">{{ group_class.class_name }}</a>
-    /
-    <a href="/latin/{{ element_group }}/{{ element_type }}/undefined">{{ type_class.name }}</a>
+    <a href="/histology/{{ element_type }}">{{ type_class.name }}</a>
     /
     Статистика
 {% endblock %}
@@ -37,15 +35,15 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Русское название</th>
-                        <th scope="col">Латинское название</th>
+                        <th scope="col">Изображение</th>
+                        <th scope="col">Препарат</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for element in incorrect_list %}
                     <tr>
-                        <td>{{ element.name_rus }}</td>
-                        <td>{{ element.name_lat }}</td>
+                        <td><img src="../../../{{ element.picture.url }}" height="125" class="img-responsive"></td>
+                        <td>{{ element.correct_option }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

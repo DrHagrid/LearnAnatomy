@@ -15,3 +15,7 @@ def reference_choice(request):
 def reference(request, article_id):
     article = Article.objects.get(pk=article_id)
     return render(request, 'reference/reference.html', locals())
+
+
+def about(request):
+    return render(request, 'reference/about.html', locals())

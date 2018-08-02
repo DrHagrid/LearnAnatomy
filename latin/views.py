@@ -24,7 +24,7 @@ def latin_check(request):
     ])
     replica_fail = random.choice([
         'Ответ не верный. Попробуйте ещё.',
-        'Ответ не верный. Нажмите "Подсказка", если хотите посмотреть ответ.',
+        'Не правильно!',
         'Не верно!'
     ])
 
@@ -168,5 +168,7 @@ def latin_stat(request, element_group, element_type):
             incorrect_list.append(group_class.objects.get(pk=e))
 
         total = len(group_class.objects.filter(type=type_class))
+        correct_percent = round((int(correct)/total)*100)
+        incorrect_percent = 100 - correct_percent
 
     return render(request, 'latin/stat.html', locals())

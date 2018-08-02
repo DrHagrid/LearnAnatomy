@@ -1,12 +1,12 @@
 .control {
-    font-family: arial;
+    font-family: 'Roboto Condensed', sans-serif;
     display: block;
     position: relative;
     padding-left: 30px;
     margin-bottom: 5px;
     padding-top: 0px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12pt;
 }
     .control input {
         position: absolute;
@@ -52,7 +52,7 @@
     display: none;
 }
 .control input:checked ~ .control_indicator:after {
-    display: block;
+    display: none;
 }
 .control-radio .control_indicator:after {
     left: 7px;
@@ -70,4 +70,15 @@
 	width: 100%;
 	margin-top: 10px;
 	text-align: left;
+}
+
+@media screen and (max-width: 767px ) {
+    .control {
+        font-size: 6pt;
+        padding-left: 20px;
+    }
+    .control_indicator {
+        height: 10px;
+        width: 10px;
+    }
 }

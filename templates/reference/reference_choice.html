@@ -18,10 +18,10 @@
         {% for article_section in article_section_list %}
             <div class="card">
                 <div class="card-header" id="heading{{ article_section.section.id }}">
-                    <h5 class="mb-0">
+                    <h5 class="mb-0 inline-group">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ article_section.section.id }}" aria-expanded="true" aria-controls="collapse{{ article_section.section.id }}">
                             {{ article_section.section.name }}
-                            <span class="badge badge-secondary badge-pill ">{{ article_section.count }}</span>
+                            <span class="badge badge-secondary badge-pill counter">{{ article_section.count }}</span>
                         </button>
                     </h5>
                 </div>

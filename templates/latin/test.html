@@ -4,7 +4,7 @@
 {% block way %}
     <a href="/">Главная</a>
     /
-    <a href="/latin">Тест по латинским названиям</a>
+    <a href="/latin">Тест по латинскому языку</a>
     /
     <a href="/latin/{{ element_group }}">{{ element.class_name }}</a>
     /
@@ -13,13 +13,13 @@
 
 {% block alert %}
     <div class="alert alert-warning" role="alert">
-        Назовите данный анатомический элемент на латинском
+        Назовите элемент на латинском
     </div>
 {% endblock %}
 
 {% block content %}
     <p>{{ element.name_rus }}</p>
-    <img src="../../../../{{ element.picture.url }}" class="img-responsive">
+    <img src="../../../../{{ element.picture.url }}" class="test-img img-responsive">
     <div class="info invisible">
         {% autoescape off %}
             <strong>{{ element.name_lat }}</strong> - {{ element.info }}

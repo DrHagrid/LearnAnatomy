@@ -1,8 +1,18 @@
 {% if not user.is_authenticated %}
-    <div class="login-alert">
+    <div class="login-alert d-none d-sm-block">
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            Пожалуйста <a href="/accounts/login" class="alert-link">войдите</a> в свой аккаунт или <a href="/accounts/register" class="alert-link">зарегистрируйтесь</a>!
+            <a href="/accounts/login" class="alert-link">Войдите</a> или <a href="/accounts/register" class="alert-link">зарегистрируйтесь</a>!
             (<a href="#" class="alert-link" id="register-info-link" data-toggle="modal" data-target="#register-info">Зачем нужна регистрация?</a>)
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="login-alert d-sm-none">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <a href="/accounts/login" class="alert-link">Войдите</a> или <a href="/accounts/register" class="alert-link">зарегистрируйтесь</a>!
 
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
